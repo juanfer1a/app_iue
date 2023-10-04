@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_application_prueba/presentation/screens/counter/counter_screen.dart';
+import 'package:flutter_application_prueba/presentation/screens/counter/counter_functions_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            useMaterial3: true,
+            colorSchemeSeed: Colors.orange), //utilizar material 3
+        home: const CounterFunctionsScreen());
   }
 }
