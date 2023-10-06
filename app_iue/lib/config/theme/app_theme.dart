@@ -8,7 +8,7 @@ const List<Color> _colorThemes = [
   Colors.red,
   Colors.grey,
   Colors.yellow,
-  Colors.green
+  Colors.black
 ];
 
 class AppTheme {

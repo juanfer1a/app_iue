@@ -1,9 +1,8 @@
 import 'package:app_iue/widgets/imagen_fondo.dart';
-import 'package:app_iue/widgets/login.dart';
 import 'package:flutter/material.dart';
 
-class IueScreen extends StatelessWidget {
-  const IueScreen({super.key});
+class Menu extends StatelessWidget {
+  const Menu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +17,8 @@ class IueScreen extends StatelessWidget {
         //   ),
         //   centerTitle: true,
         // ),
-        body: Stack(children: [ImagenFondo(), Login()]));
+        body: Stack(children: [
+      ImagenFondo(),
+    ]));
   }
 }
