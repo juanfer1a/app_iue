@@ -8,7 +8,10 @@ environment:
 
 dependencies:
   camera: ^0.10.5+5
+  cloud_firestore: ^4.12.2
   dio: ^5.3.3
+  firebase_auth: ^4.12.1
+  firebase_core: ^2.21.0
   flutter:
     sdk: flutter
   provider: ^6.0.5
@@ -21,3 +24,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+
+  assets:
+    - 'lib/images/fondo.png'

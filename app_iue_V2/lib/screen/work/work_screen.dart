@@ -1,19 +1,30 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class WorkScreen extends StatefulWidget {
-  const WorkScreen({super.key});
+class WorkScreen extends StatelessWidget {
+  final String datosRecibidos;
 
-  @override
-  State<WorkScreen> createState() => _WorkScreenState();
-}
+  const WorkScreen(this.datosRecibidos, {super.key});
 
-class _WorkScreenState extends State<WorkScreen> {
+  //final imagen = Image.file(File(rutaImagen));
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("dd")),
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            // Muestra la imagen aquí con un tamaño específico.
+            SizedBox(
+              width: 200, // Ancho deseado
+              height: 200, // Alto deseado
+              child: Image.file(File(datosRecibidos)),
+            ),
+
+            // Puedes agregar más contenido según tus necesidades.
+          ],
+        ),
+      ),
     );
   }
 }

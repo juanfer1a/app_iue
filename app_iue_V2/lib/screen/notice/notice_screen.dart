@@ -1,7 +1,6 @@
 import 'package:appuenvigado/screen/home/home_provider.dart';
+import 'package:appuenvigado/screen/imagen_fondo.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class NoticeScreen extends StatefulWidget {
   const NoticeScreen({super.key});
@@ -15,11 +14,7 @@ class _NoticeScreenState extends State<NoticeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Notificaciones"),
-      ),
-    );
+    return const Scaffold(body: ImagenFondo());
   }
 
   Widget image() {

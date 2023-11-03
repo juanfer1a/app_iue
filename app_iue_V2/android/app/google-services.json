@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "165732920648",
+    "firebase_url": "https://app-iue-d3f71-default-rtdb.firebaseio.com",
+    "project_id": "app-iue-d3f71",
+    "storage_bucket": "app-iue-d3f71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165732920648:android:8cd8ff7e75842c58c0977d",
+        "android_client_info": {
+          "package_name": "com.example.appuenvigado"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA052CPgs4A9CqfiNdwgV0jz5-i4z5S_Ro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,11 +1,7 @@
 import 'package:appuenvigado/screen/camera/camera_screen.dart';
 import 'package:appuenvigado/screen/home/home_provider.dart';
-import 'package:appuenvigado/screen/work/work_screen.dart';
 import 'package:appuenvigado/screen/notice/notice_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:camera/camera.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   _getDrawerItemWidget(int position) {
     switch (position) {
       case 0:
-        return const WorkScreen();
+        return const NoticeScreen();
       case 1:
         return const NoticeScreen();
       case 3:
@@ -41,16 +37,29 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text("Principal"),
       ),
       drawer: Drawer(
+        backgroundColor: const Color.fromARGB(82, 170, 128, 37),
         child: ListView(
           children: <Widget>[
             const UserAccountsDrawerHeader(
-              accountName: Text("Juan"),
-              accountEmail: Text("Email"),
+              accountName: Text(
+                "Juan",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 20,
+                ),
+              ),
+              accountEmail: Text("Email",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 15,
+                  )),
               currentAccountPicture: CircleAvatar(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Color.fromARGB(178, 0, 0, 0),
                   child: Icon(
                     Icons.person,
                     size: 50,
@@ -58,7 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   )),
             ),
             ExpansionTile(
-              title: const Text("Consultas"),
+              title: const Text(
+                "Consultas",
+                style: TextStyle(fontSize: 22),
+              ),
               leading: const Icon(Icons.search),
               children: [
                 ListTile(
@@ -74,14 +86,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 ListTile(
-                  title: const Text("Notas periodo"),
+                  title: const Text("Captura"),
                   onTap: () async {
                     String path = await Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const CameraScreen()));
-                    homeProvider.image.add(path);
-                    Navigator.pop(context);
+                    // ignore: use_build_context_synchronously
+                    homeProvider.addImage(path, context);
+
+                    setState(() {});
                   },
                 ),
                 ListTile(
@@ -93,7 +107,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             ExpansionTile(
-              title: const Text("Matrículas"),
+              title: const Text(
+                "Matrículas",
+                style: TextStyle(fontSize: 22),
+              ),
               leading: const Icon(Icons.book),
               children: [
                 ListTile(
@@ -123,7 +140,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             ExpansionTile(
-              title: const Text("Solicitudes"),
+              title: const Text(
+                "Solicitudes",
+                style: TextStyle(fontSize: 22),
+              ),
               leading: const Icon(Icons.document_scanner),
               children: [
                 ListTile(
@@ -153,14 +173,20 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             ListTile(
-              title: const Text("Noticias"),
+              title: const Text(
+                "Noticias",
+                style: TextStyle(fontSize: 22),
+              ),
               leading: const Icon(Icons.notification_add),
               onTap: () {
                 _onSelectItem(0);
               },
             ),
             ListTile(
-              title: const Text("Tareas"),
+              title: const Text(
+                "Tareas",
+                style: TextStyle(fontSize: 22),
+              ),
               leading: const Icon(Icons.home_work),
               onTap: () {
                 _onSelectItem(0);
